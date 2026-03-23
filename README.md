@@ -1,59 +1,18 @@
-# DevQuiz
+# DevQuiz 🧠💻
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.22.
+O DevQuiz é uma aplicação web interativa voltada para testar conhecimentos em programação. O propósito central deste projeto foi servir como laboratório de estudos para colocar em prática conceitos importantes do desenvolvimento front-end moderno.
 
-## Development server
+## 🎯 Objetivo do Projeto
 
-To start a local development server, run:
+Este projeto foi construído puramente para fins educacionais. O foco principal não foi apenas criar um sistema de quiz, mas sim solidificar o aprendizado em:
 
-```bash
-ng serve
-```
+* **Consumo de APIs Externas:** Como se comunicar com serviços de terceiros (como a IA responsável por gerar as perguntas dinamicamente) e gerenciar estados assíncronos.
+* **Arquitetura Front-end:** Praticar a componentização da interface e gerenciamento de serviços e rotas.
+* **Boas Práticas de UI/UX:** Criação de layouts responsivos, código semântico e adoção de práticas visuais que facilitem a leitura.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚀 Tecnologias e Ferramentas
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+* Angular (ou framework/biblioteca de sua escolha)
+* HTML5 & SCSS (Design e layouts responsivos)
+* TypeScript / JavaScript
+* Integração com API de Inteligência Artificial para listagem dinâmica de conteúdos.
