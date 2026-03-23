@@ -16,3 +16,5 @@ Este projeto foi construído puramente para fins educacionais. O foco principal 
 * HTML5 & SCSS (Design e layouts responsivos)
 * TypeScript / JavaScript
 * Integração com API de Inteligência Artificial para listagem dinâmica de conteúdos.
+
+Para testar, basta acessar o site [https://dev-quiz-six.vercel.app] ou baixar o repositório e rodar localmente.
