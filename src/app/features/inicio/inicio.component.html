@@ -1,0 +1,65 @@
+<main class="container-inicio">
+  <div class="cartao-vidro">
+    <header class="cabecalho">
+      <h1>Dev<span>Quiz</span></h1>
+      <p>Gerador de testes de programação via IA</p>
+    </header>
+
+    <form [formGroup]="form" (ngSubmit)="iniciarQuiz()">
+      <div class="grupo-formulario">
+        <label for="provedor">Provedor de IA</label>
+        <select id="provedor" formControlName="provedor">
+          <option value="gemini">Google Gemini</option>
+          <option value="openai">OpenAI (ChatGPT)</option>
+        </select>
+      </div>
+
+      <div class="grupo-formulario">
+        <label for="chaveApi">Chave da API</label>
+        <input
+          type="password"
+          id="chaveApi"
+          formControlName="chaveApi"
+          placeholder="Sua chave secreta da API"
+        />
+        <small class="dica"
+          >A chave é salva apenas temporariamente no seu navegador e não é
+          enviada para nenhum servidor.</small
+        >
+      </div>
+
+      <div class="grupo-formulario linha">
+        <div class="coluna">
+          <label for="linguagem">Linguagem</label>
+          <select id="linguagem" formControlName="linguagem">
+            <option *ngFor="let lang of linguagens" [value]="lang">
+              {{ lang }}
+            </option>
+          </select>
+        </div>
+
+        <div class="coluna">
+          <label for="dificuldade">Dificuldade</label>
+          <select id="dificuldade" formControlName="dificuldade">
+            <option *ngFor="let diff of dificuldades" [value]="diff">
+              {{ diff }}
+            </option>
+          </select>
+        </div>
+
+        <div class="coluna">
+          <label for="quantidadeQuestoes">Questões</label>
+          <select id="quantidadeQuestoes" formControlName="quantidadeQuestoes">
+            <option *ngFor="let qtd of quantidades" [value]="qtd">
+              {{ qtd }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primario" [disabled]="form.invalid">
+        Começar o Desafio
+      </button>
+    </form>
+  </div>
+</main>

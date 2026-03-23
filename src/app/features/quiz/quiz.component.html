@@ -1,0 +1,74 @@
+<main class="container-quiz">
+  <app-carregando *ngIf="!questoes && !erro"></app-carregando>
+
+  <div class="cartao-erro cartao-vidro" *ngIf="erro">
+    <h2>Ops!</h2>
+    <p>{{ erro }}</p>
+    <button class="btn-primario" (click)="voltar()">Voltar</button>
+  </div>
+
+  <div class="cartao-quiz" *ngIf="questoes && questaoAtual">
+    <div class="barra-progresso">
+      <div class="preenchimento" [style.width.%]="progresso"></div>
+    </div>
+
+    <header class="cabecalho-quiz">
+      <button
+        class="btn-cancelar"
+        (click)="voltar()"
+        aria-label="Cancelar teste"
+      >
+        <svg
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          ></path>
+        </svg>
+        Cancelar
+      </button>
+      <div class="texto-progresso" aria-live="polite">
+        Questão {{ questaoAtualIndex + 1 }} / {{ questoes.length }}
+      </div>
+    </header>
+
+    <section class="area-questao" [class.animacao-surgir]="mostrarAnimacao">
+      <h3 [innerHTML]="questaoAtual.pergunta | markdown"></h3>
+
+      <div class="opcoes" role="group" aria-label="Opções de resposta">
+        <button
+          *ngFor="let opcao of questaoAtual.opcoes; let i = index"
+          class="btn-opcao"
+          [class.selecionado]="opcaoSelecionada === i"
+          (click)="selecionarOpcao(i)"
+          [attr.aria-pressed]="opcaoSelecionada === i"
+        >
+          <span class="letra-opcao" aria-hidden="true">{{
+            ["A", "B", "C", "D"][i]
+          }}</span>
+          <span class="texto-opcao">{{ limparMarkdown(opcao) }}</span>
+        </button>
+      </div>
+
+      <button
+        class="btn-primario"
+        [disabled]="opcaoSelecionada === null"
+        (click)="proximaQuestao()"
+      >
+        {{
+          questaoAtualIndex === questoes.length - 1
+            ? "Finalizar"
+            : "Próxima Questão"
+        }}
+      </button>
+    </section>
+  </div>
+</main>
